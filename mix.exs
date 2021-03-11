@@ -1,10 +1,12 @@
 defmodule Mdex.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [
       app: :mdex,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -25,7 +27,6 @@ defmodule Mdex.MixProject do
     [
       {:plug_cowboy, "~> 2.4"},
       {:earmark, "~> 1.4"},
-      {:timex, "~> 3.6"},
       {:yamerl, "~> 0.8"}
     ]
   end
@@ -37,6 +38,6 @@ defmodule Mdex.MixProject do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    [server: ["run --no-halt"]]
+    [dev: ["run --no-halt"], build: [""]]
   end
 end

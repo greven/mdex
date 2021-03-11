@@ -1,4 +1,4 @@
-defmodule Mdex.View do
+defmodule Mdex.Renderer do
   import Plug.Conn
 
   @template_dir "lib/mdex/templates"

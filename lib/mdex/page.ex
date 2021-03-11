@@ -1,8 +1,3 @@
 defmodule Mdex.Page do
-  defstruct slug: "",
-            title: "",
-            date: "",
-            intro: "",
-            content: "",
-            layout: "page.html"
+  defstruct [:id, :date, :title, :description, :body, :tags, :layout]
 end
