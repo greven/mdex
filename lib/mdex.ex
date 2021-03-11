@@ -3,10 +3,13 @@ defmodule Mdex do
   Documentation for `Mdex`.
   """
 
+  alias Mdex.Parser
+
   def init() do
   end
 
   def build() do
+    ["Post", "Page"] |> Parser.extract()
   end
 
   def server() do
@@ -16,12 +19,5 @@ defmodule Mdex do
   end
 
   def post() do
-  end
-
-  def draft() do
-  end
-
-  defp __extract__(module, opts) do
-    builder = Keyword.fetch!(opts, :build)
   end
 end

@@ -38,6 +38,6 @@ defmodule Mdex.MixProject do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    [dev: ["run --no-halt"], build: [""]]
+    [dev: [""], build: [""]]
   end
 end
