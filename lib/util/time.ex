@@ -1,17 +1,22 @@
 defmodule Util.Time do
-  # TODO: Format time in seconds to differnt formats depending on magnitude, ex: if bigger than 1 second, seconds, if smaller than 1 second, milliseconds, if bigger than 60 seconds in minutes, etc...
-  # def format()
-
   ##  Micro seconds formatting
 
   @doc """
   Outputs a formatted string of the microseconds time in
   `:nanosecond`, `:microsecond`, `:millisecond` or `:second`.
+  If no second argument is provided the format will be chosen
+  given the magnitude of the time argument.
 
   ## Example
 
       iex> Util.Time.format_microseconds(1)
       "1µs"
+
+      iex> Util.Time.format_microseconds(1234)
+      "1.23ms"
+
+      iex> Util.Time.format_microseconds(12340000)
+      "12.33s"
 
       iex> Util.Time.format_microseconds(123, :microsecond)
       "123µs"
@@ -23,7 +28,11 @@ defmodule Util.Time do
       "1.0ms"
   """
   def format_microseconds(time) do
-    format_microseconds(time, :microsecond)
+    cond do
+      time >= 1_000_000 -> format_microseconds(time, :second)
+      time >= 1_000 -> format_microseconds(time, :millisecond)
+      true -> format_microseconds(time, :microsecond)
+    end
   end
 
   def format_microseconds(time, :microsecond) do
@@ -31,7 +40,7 @@ defmodule Util.Time do
   end
 
   def format_microseconds(time, :millisecond) do
-    to_string(Float.floor(time / 1_000, 1)) <> "ms"
+    to_string(Float.floor(time / 1_000, 2)) <> "ms"
   end
 
   def format_microseconds(time, :second) do
