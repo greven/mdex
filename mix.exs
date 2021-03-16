@@ -38,6 +38,6 @@ defmodule Mdex.MixProject do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    [dev: [""], build: ["mdex.build"]]
+    [server: ["mdex.server"], build: ["mdex.build"]]
   end
 end
