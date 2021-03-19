@@ -1,13 +1,12 @@
 defmodule Mix.Tasks.Mdex.Build do
+  @shortdoc "Generates the static site build"
+
   @moduledoc """
   Command to compile the static build of the website.
   """
 
-  @shortdoc "Generates the static site build"
-
   use Mix.Task
-  alias Util.Time
-  alias Util.Perf
+  alias Util.{Time, Perf}
 
   def run(_args) do
     IO.puts("\n🚀 Generating the static site...\n")

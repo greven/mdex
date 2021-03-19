@@ -1,9 +1,9 @@
 defmodule Mix.Tasks.Mdex.Create.Page do
+  @shortdoc "Generate a page file"
+
   @moduledoc """
   Command to generate a page file.
   """
-
-  @shortdoc "Generate a page file"
 
   use Mix.Task
 

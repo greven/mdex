@@ -1,9 +1,9 @@
 defmodule Mix.Tasks.Mdex.Create.Post do
+  @shortdoc "Generate a blog post file"
+
   @moduledoc """
   Command to generate a post file.
   """
-
-  @shortdoc "Generate a blog post file"
 
   use Mix.Task
 

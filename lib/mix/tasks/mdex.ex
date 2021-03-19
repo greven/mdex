@@ -21,7 +21,7 @@ defmodule Mix.Tasks.Mdex do
   end
 
   defp help() do
-    Mix.Task.run("app.start")
+    Application.ensure_all_started(:mdex)
     Mix.shell().info("Mdex v#{Application.spec(:mdex, :vsn)}")
     Mix.shell().info("Simple static site generator for Elixir.")
     Mix.shell().info("\nAvailable tasks:\n")
